@@ -17,6 +17,8 @@ $> r2 <filename>
 [0x00000000]> iz                  # strings in .data section
 [0x00000000]> i                   # display file information (equiv. to 'rabin <filename>')
 ```
+![file_info](/images/cm3_file-info.png)
+![file info2](/images/cm3_i-info.png)
 
 * Note that when you run ```ie``` you're likely to see an entrypoint of ```type=program```. This first entrypoint will have a corresponding entry in the 'symbol' flagspace (i.e. ```fs symbols```). If you print the symbol list, you . should see the virtual addresses (```vaddr```) in the entrypoints list all appear as addresses of symbols. The first entrypoint, ```sym.entry0``` actually loads to a section before ```sym.main```, where registers are initialized and the address for sym.main is pushed to the stack in preparation for the syscall which 'starts' the program.
 
